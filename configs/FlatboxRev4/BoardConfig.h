@@ -18,9 +18,9 @@
 #define FLATBOX_SW4_PIN    3
 #define FLATBOX_SW5_PIN    2
 #define FLATBOX_SW6_PIN    1
-#define FLATBOX_SW7_PIN    9  // LEFT
+#define FLATBOX_SW7_PIN    11  // LEFT
 #define FLATBOX_SW8_PIN    10 // DOWN
-#define FLATBOX_SW9_PIN    11 // RIGHT
+#define FLATBOX_SW9_PIN    9 // RIGHT
 #define FLATBOX_SW10_PIN   18 // P1 / SQUARE
 #define FLATBOX_SW11_PIN   25 // P2 / TRIANGLE
 #define FLATBOX_SW12_PIN   27 // P3
@@ -68,7 +68,7 @@
 
 
 // This is the SOCD section.
-// SOCD stands for `simultaneous opposing cardinal directions`.
+// SOCD stands for `  f la t ch zhus`.
 // There are three options for `DEFAULT_SOCD_MODE` currently:
 // 1 - `SOCD_MODE_NEUTRAL` - This is a neutral SOCD.  EG. when you press `up` + `down` no input will be registered.
 // 2 - `SOCD_MODE_UP_PRIORITY` - This is up priority SOCD.  EG. when you press `up` + `down` `up` will be registered.
@@ -109,10 +109,32 @@
 // Unless you are planning on running custom animations I would recommmend you leave this as is.
 
 #define TURBO_LED_PIN -1
-#define BOARD_LEDS_PIN -1
+#define BOARD_LEDS_PIN 15
 #define REVERSE_LED_PIN -1
 
+#define LED_BRIGHTNESS_MAXIMUM 150
+#define LED_BRIGHTNESS_STEPS 5
+#define LED_FORMAT LED_FORMAT_GRB
+#define LEDS_PER_PIXEL 1
 
+#define LEDS_DPAD_LEFT   3 // 11  
+#define LEDS_DPAD_DOWN   2//10
+#define LEDS_DPAD_RIGHT  1//9
+#define LEDS_DPAD_UP     0
+#define LEDS_BUTTON_B3   4
+#define LEDS_BUTTON_B4   5
+#define LEDS_BUTTON_R1   6
+#define LEDS_BUTTON_L1   7
+#define LEDS_BUTTON_B1   8
+#define LEDS_BUTTON_B2   9
+#define LEDS_BUTTON_R2   10
+#define LEDS_BUTTON_L2   11
+#define LEDS_BUTTON_S1   -1
+#define LEDS_BUTTON_S2   -1
+#define LEDS_BUTTON_L3   -1
+#define LEDS_BUTTON_R3   -1
+#define LEDS_BUTTON_A1   -1
+#define LEDS_BUTTON_A2   -1
 // This is the Player LED section.
 // In this section you can specify if Player LEDs will be active, and, if active, which pins will be used for them.
 // The defualt is `PLED_TYPE_NONE` which will turn the Player LEDs off.
@@ -162,7 +184,13 @@
 // The default `DISPLAY_INVERY` is `0`.
 // This can be changed to `1` to have the color on the display inverted.
 
-#define HAS_I2C_DISPLAY 0
+#define HAS_I2C_DISPLAY 1
+#define I2C_SDA_PIN 20
+#define I2C_SCL_PIN 21
+#define I2C_BLOCK i2c0
+#define I2C_SPEED 400000
+#define DISPLAY_FLIP 0
+#define DISPLAY_INVERT 0
 
 
 // The default `SPLASH_MODE` is `NOSPLASH`.
