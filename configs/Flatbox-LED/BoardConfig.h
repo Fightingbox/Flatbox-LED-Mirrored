@@ -8,7 +8,7 @@
 
 #include "enums.pb.h"
 
-#define BOARD_CONFIG_LABEL "Flatbox Rev. 4"
+#define BOARD_CONFIG_LABEL "Flatbox LED"
 
 // Main pin mapping Configuration
 // Mapping between Flatbox Rev4 switch number (as silkscreened) and GPIO pin listed under "Flatbox Rev4 SW#"
@@ -64,18 +64,18 @@
 #define LED_FORMAT LED_FORMAT_GRB
 #define LEDS_PER_PIXEL 1
 
-#define LEDS_DPAD_LEFT   0 // 11  
-#define LEDS_DPAD_DOWN   1//10
-#define LEDS_DPAD_RIGHT  2//9
-#define LEDS_DPAD_UP     11
-#define LEDS_BUTTON_B3   3
-#define LEDS_BUTTON_B4   4
-#define LEDS_BUTTON_R1   5
-#define LEDS_BUTTON_L1   6
-#define LEDS_BUTTON_B1   10
+#define LEDS_DPAD_LEFT   1 // 11  
+#define LEDS_DPAD_DOWN   2//10
+#define LEDS_DPAD_RIGHT  3//9
+#define LEDS_DPAD_UP     0
+#define LEDS_BUTTON_B3   4
+#define LEDS_BUTTON_B4   5
+#define LEDS_BUTTON_R1   6
+#define LEDS_BUTTON_L1   7
+#define LEDS_BUTTON_B1   8
 #define LEDS_BUTTON_B2   9
-#define LEDS_BUTTON_R2   8
-#define LEDS_BUTTON_L2   7
+#define LEDS_BUTTON_R2   10
+#define LEDS_BUTTON_L2   11
 #define LEDS_BUTTON_S1   -1
 #define LEDS_BUTTON_S2   -1
 #define LEDS_BUTTON_L3   -1
