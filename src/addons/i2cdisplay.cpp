@@ -119,7 +119,8 @@ void I2CDisplayAddon::process() {
 					drawArcadeStick(8, (isInputHistoryEnabled ? 22 : 28), 8, 2);
 					break;
 				case BUTTON_LAYOUT_STICKLESS:
-					drawStickless(8, 20, 8, 2);
+					//drawStickless(8, 20, 8, 2);
+					drawSticklessMirrored(8, 20, 8, 2);
 					break;
 				case BUTTON_LAYOUT_BUTTONS_ANGLED:
 					drawWasdBox(8, (isInputHistoryEnabled ? 22 : 28), 7, 3);
@@ -164,7 +165,8 @@ void I2CDisplayAddon::process() {
 					drawArcadeButtons(8, (isInputHistoryEnabled ? 22 : 28), 8, 2);
 					break;
 				case BUTTON_LAYOUT_STICKLESSB:
-					drawSticklessButtons(8, 20, 8, 2);
+					//drawSticklessButtons(8, 20, 8, 2);
+					drawSticklessButtonsMirrored(8, 20, 8, 2);
 					break;
 				case BUTTON_LAYOUT_BUTTONS_ANGLEDB:
 					drawWasdButtons(8, (isInputHistoryEnabled ? 22 : 28), 7, 3);
@@ -479,6 +481,32 @@ void I2CDisplayAddon::drawStickless(int startX, int startY, int buttonRadius, in
 	obdPreciseEllipse(&obd, startX + buttonMargin, startY, buttonRadius, buttonRadius, 1, pressedDown());
 	obdPreciseEllipse(&obd, startX + (buttonMargin * 1.875), startY + (buttonMargin / 2), buttonRadius, buttonRadius, 1, pressedRight());
 	obdPreciseEllipse(&obd, startX + (buttonMargin * (isInputHistoryEnabled ? 1.875 : 2.25)), startY + buttonMargin * (isInputHistoryEnabled ? 1.5 : 1.875), buttonRadius, buttonRadius, 1, pressedUp());
+}
+
+void I2CDisplayAddon::drawSticklessMirrored(int startX, int startY, int buttonRadius, int buttonPadding)
+{
+	const int buttonMargin = buttonPadding + (buttonRadius * 2);
+
+	// 8-button
+	obdPreciseEllipse(&obd, startX , startY, buttonRadius, buttonRadius, 1, pGamepad->pressedL1());
+	obdPreciseEllipse(&obd, startX + buttonMargin , startY - (buttonMargin / 4), buttonRadius, buttonRadius, 1, pGamepad->pressedR1());
+	obdPreciseEllipse(&obd, startX + (buttonMargin * 2), startY - (buttonMargin / 4), buttonRadius, buttonRadius, 1, pGamepad->pressedB4());
+	obdPreciseEllipse(&obd, startX + (buttonMargin * 3), startY, buttonRadius, buttonRadius, 1, pGamepad->pressedB3());
+
+	obdPreciseEllipse(&obd, startX , startY + buttonMargin, buttonRadius, buttonRadius, 1, pGamepad->pressedL2());
+	obdPreciseEllipse(&obd, startX + buttonMargin , startY + buttonMargin - (buttonMargin / 4), buttonRadius, buttonRadius, 1, pGamepad->pressedR2());
+	obdPreciseEllipse(&obd, startX + (buttonMargin * 2), startY + buttonMargin - (buttonMargin / 4), buttonRadius, buttonRadius, 1, pGamepad->pressedB2());
+	obdPreciseEllipse(&obd, startX + (buttonMargin * 3), startY + buttonMargin, buttonRadius, buttonRadius, 1, pGamepad->pressedB1());
+
+}
+
+void I2CDisplayAddon::drawSticklessButtonsMirrored(int startX, int startY, int buttonRadius, int buttonPadding)  
+{
+	const int buttonMargin = buttonPadding + (buttonRadius * 2);
+	obdPreciseEllipse(&obd, startX + (buttonMargin * 6),startY, buttonRadius, buttonRadius, 1, pressedLeft());
+	obdPreciseEllipse(&obd, startX + (buttonMargin * 5), startY, buttonRadius, buttonRadius, 1, pressedDown());
+	obdPreciseEllipse(&obd, startX + (buttonMargin * 4.125), startY + (buttonMargin / 2), buttonRadius, buttonRadius, 1, pressedRight());
+	obdPreciseEllipse(&obd, startX + (buttonMargin * 3.75), startY + buttonMargin * 1.875, buttonRadius, buttonRadius, 1, pressedUp());
 }
 
 void I2CDisplayAddon::drawWasdBox(int startX, int startY, int buttonRadius, int buttonPadding)
