@@ -3,11 +3,11 @@ Based on the [GP2040-CE](https://github.com/OpenStickCommunity/GP2040-CE) Flatbo
 
 Add the colorful LEDs and the OLED display, perfect hardware change beased on the [Flatbox](https://github.com/jfedor2/flatbox) design by [jfedor2](https://github.com/jfedor2) powered by an RP2040 MCU.
 
-![Flatbox-LED](configs/Flatbox-LED-Mirror/assets/4.png)
+![Flatbox-LED](pictures/assets/4.png)
 
-![Flatbox-LED](configs/Flatbox-LED-Mirror/assets/3.jpg)
+![Flatbox-LED](pictures/assets/3.jpg)
 
-![Flatbox-LED](configs/Flatbox-LED-Mirror/assets/6.png)
+![Flatbox-LED](pictures/assets/6.png)
 
 ## Upgrade the firmware:
 - Unplug your device.
