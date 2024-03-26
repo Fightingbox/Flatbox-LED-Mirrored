@@ -23,7 +23,7 @@ string(REGEX REPLACE "^(.......-.*)|(.......)$" "0.0.0" CMAKE_GIT_REPO_VERSION $
 
 set(GIT_REPO_VERSION v0.7.7)
 set(CMAKE_GIT_REPO_VERSION 0.7.7)
-set(GP2040_BOARDCONFIG Flatbox-LED-Mirror)
+set(GP2040_BOARDCONFIG Flatbox-LED-Mirrored)
 
 configure_file("headers/version.h.in" "headers/version.h")
 message("GIT_REPO_VERSION is ${GIT_REPO_VERSION}")
