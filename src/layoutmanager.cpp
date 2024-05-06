@@ -105,6 +105,7 @@ LayoutManager::LayoutList LayoutManager::getLeftLayout(uint16_t index) {
             return drawGitadoraStrumA();
         case BUTTON_LAYOUT_BOARD_DEFINED_A:
             return drawBoardDefinedA();
+        
         default:
             break;
     }
